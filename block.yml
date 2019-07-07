@@ -1,0 +1,12 @@
+- hosts: all
+  tasks:
+    - block:
+       - name: "Try block"
+         copy:
+           src: /etc/examhosts
+           dest: /var/index.html
+      rescue:
+        - name: "Catch block"
+          copy:
+           dest: /var/index.html
+           content: "copy from QP"

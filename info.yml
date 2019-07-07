@@ -1,0 +1,5 @@
+- hosts: all
+  tasks:
+    - copy:
+        dest: /var/www/new.html
+        content: "[{{ ansible_enp0s3.macaddress }} {{ ansible_enp0s3.ipv4.address }} {{ ansible_hostname }} {{ ansible_processor_count }} ]"

@@ -1,0 +1,5 @@
+- hosts: node2, node3
+  tasks:
+     - service:
+        name: httpd
+        state: stopped

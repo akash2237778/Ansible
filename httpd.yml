@@ -1,0 +1,13 @@
+- hosts: all
+  tasks:
+    - package:
+        name: httpd
+        state: present
+    - lineinfile:
+        path: /var/www/html/index.html
+        line: "this is {{ ansible_hostname }} "
+        create: yes
+    - service:
+        name: httpd
+        state: started
+        enabled: True

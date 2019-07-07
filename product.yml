@@ -1,0 +1,10 @@
+- hosts: Production
+  tasks:
+    - archive:
+        path: /etc/httpd
+        dest: /var/www/html/production.tar.gz
+- hosts: Backup
+  tasks:
+    - archive:
+        path: /etc/magic
+        dest: /var/www/html/backup.tar.gz
